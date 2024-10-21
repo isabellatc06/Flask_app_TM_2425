@@ -5,43 +5,56 @@
 </head>
 
 <body>
-    <header id="header">
-        <nav id="header-nav">
-            <div id="header-nav-logo">
-                <a href="{{url_for('home.landing_page')}}">
-                    <img src="{{url_for('static', filename='imgs/logo-csud.svg')}}" alt="logo-csud"/>
-                </a>
+    <header id="header1">
+        <!--Création de la barre de recherche-->
+        <div id="barre_recherche">
+            <!--Insertion de l'image de recherche-->
+            <div class="img" id="cloche">
+                <img src="https://www.webiconio.com/_upload/2412/image_2412.svg" />
             </div>
-            <ul id="header-nav-menu">
-                {% if g.user %}
-                    <li><span>{{ g.user['username'] }}</span>
-                    <li><a href="{{ url_for('auth.logout') }}">Se déconnecter</a>
-                    <li><a href="{{url_for('user.show_profile')}}">Consulter son profil</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('auth.register') }}">S'enregistrer</a>
-                    <li><a href="{{ url_for('auth.login') }}">Se connecter</a>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
-        
-    <main id="main-content">
-        {% block content %}{% endblock %}
-    </main>
+            <!--Texte de recherche à l'interieur de la barre de recherche-->
+            <h3 id="rechercher">
+                Rechercher
+            </h3>
 
-    <footer id="footer">
-        <div id="footer-nav">
-            <div>
-                <p>Template de base TM</p>
-            </div>
-            <div>
-                <p>Collège du Sud, 1630, Bulle </p>
-            </div>
-            <div>
-                <p>Johan Jobin</p>
-            </div>
         </div>
-    </footer>
+        <div id="iconsposition">
+            <!--Ajout des images d'icons-->
+
+            <!--icon cloche-->
+            <div class="img icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/6880/6880045.png" />
+            </div>
+
+            <!--icon coeur-->
+            <div class="img icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" />            
+            </div>
+
+            <!--icon chariot-->
+            <div class="img icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />                        
+            </div>
+
+            <!--icon de profit qui renvoie à la page du login-->
+            <nav>
+                <div class="img icons">
+                    <a href="{{ url_for('auth.login') }}">
+                        <img src="https://cdn2.iconfinder.com/data/icons/user-interface-3-filled-line/64/user_profile_circle_interface_person-1024.png" 
+                        alt="User icon"/>
+                    </a>
+                </div>
+
+            </nav>
+        </div>
+        
+
+    </header>
+
+
+
+
+
 
     <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
