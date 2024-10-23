@@ -1,18 +1,43 @@
-{% extends 'base.html' %}
-
-{% block title %}
-  Se connecter
-{% endblock %}
+<!doctype html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 
 {% block content %}
   <div class="content-register">
     <div>
       <form method="post">
-        <label for="username">Nom d'utilisateur</label>
-        <input name="username" id="username" required>
-        <label for="password">Mot de passe</label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" value="Se connecter">
+         <!--Créer une barre d'un ahut pour le nom de la marque et le bouton du retour au site-->
+        <div class="bord_du_haut">
+
+        <!--Créer un bloc pour l'image et le texte'retour au site'-->
+        <div class="retour_au_site">
+          <!--Image-->
+          <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
+          <!--Texte-->
+          <h3>Retour au site</h3>
+        </div>
+        
+        <!--Texte: Marque-->
+        <div class="marque_login">
+          <h1>Marque</h1>
+        </div>
+      </div>
+      
+      <div class="bas_page">
+        <!--Photo quart de la page-->
+        <div class="photo">
+          <img src="https://smize.pl/pol_pl_Sukienka-maxi-Fuerta-zielona-Cocomore-1394_2.jpg" />
+        </div>
+        <div >
+          <label for="username" >Nom d'utilisateur</label>
+          <input name="username" id="username" required>
+          <label for="password">Mot de passe</label>
+          <input type="password" name="password" id="password" required>
+          <input type="submit" value="Se connecter">
+        </div>
+      </div>
       </form>
 
       {% for message in get_flashed_messages() %}
