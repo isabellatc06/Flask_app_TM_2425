@@ -164,13 +164,273 @@
 .bas_page{
 width: 100%;
 height: 80%;
-background-color: blue;
 display: flex;
+flex-direction: row;
 align-items: center;
 gap: 40px;
 }
 
 .photo{
   width: 40%;
-  height: 55%;
+  height: 50%;
 }
+
+.bas_droite{
+  height: 825px;
+  width: 60%;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+#se_connecter{
+  font-size: large;
+  font-family: Arial;
+  color:#008ECC;
+}
+
+.adresse_e_mail_login{
+  margin-top: 50px;
+}
+
+.carre_adresse_login{
+  width: 150px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#username_login input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+.mot_de_passe_login{
+  margin-top: 50px;
+}
+
+.carre_mot_de_passe_login{
+  width: 150px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password_login input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+.textes_login{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: Arial;
+  color: #89CFEF;
+  text-decoration: none;
+}
+
+
+.se_connecter_login input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+  background-color: #008ECC;
+}
+
+.continuer_login{
+  color: #89CFEF;
+  font-family: Arial;
+  font-size: larger;
+  font-weight: 900;
+}
+
+
+.elements_register{
+  width: 100%;
+  height: 80%;
+  margin-left: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.s_inscrire_carre{
+  width: 620px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s_inscrire{
+  font-family: Arial;
+  color:#008ECC;
+}
+
+.adresse_e_mail_register{
+  margin-top: 10px;
+}
+
+.carre_adresse_register{
+  width: 150px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#username_register input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+
+.mot_de_passe_register{
+  margin-top: 10px;
+}
+
+.carre_mot_de_passe_register{
+  width: 150px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#password_register input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+
+.adresse_norue_register{
+  margin-top: 10px;
+  display: flex;
+}
+
+.carre_adresse_rue_register{
+  width: 50px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rue_register input{
+  width: 400px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+.adresse_no_register{
+  margin-left: 20px;
+}
+
+.carre_adresse_no_register{
+  width: 40px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#no_register input{
+  width: 100px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+.code_postal_register{
+  margin-top: 10px;
+}
+
+.carre_code_postal_register{
+  width: 130px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#code_register input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+.ville_register{
+  margin-top: 10px;
+}
+
+
+.carre_ville_register{
+  width: 60px;
+  height: 40px;
+  background-color: #008ECC;
+  border: 1px #008ECC;
+  font-family: Arial;
+  color: #89CFEF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#city_register input{
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+}
+
+
+.s_inscrire_register input{
+  margin-top: 20px;
+  width: 520px;
+  height: 50px;
+  border: 2px solid #008ECC;
+  background-color: #008ECC;
+}
+
+.inscrire_register{
+  color: #89CFEF;
+  font-family: Arial;
+  font-size: larger;
+  font-weight: 900;
+} 

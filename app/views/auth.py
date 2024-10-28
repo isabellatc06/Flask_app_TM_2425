@@ -16,15 +16,19 @@ def register():
         # On récupère les champs 'username' et 'password' de la requête HTTP
         username = request.form['username']
         password = request.form['password']
+        rue = request.form['rue']
+        no_rue = request.form['no_rue']
+        code_postal = request.form['code_postal']
+        ville = request.form['ville']
 
         # On récupère la base de donnée
         db = get_db()
 
         # Si le nom d'utilisateur et le mot de passe ont bien une valeur
         # on essaie d'insérer l'utilisateur dans la base de données
-        if username and password:
+        if username and password and rue and no_rue and code_postal and ville:
             try:
-                db.execute("INSERT INTO users (username, password) VALUES (?, ?)",(username, generate_password_hash(password)))
+                db.execute("INSERT INTO users (username, password, rue, no_rue, code_postal, ville) VALUES (?, ?, ?, ?, ?, ?)",(username, generate_password_hash(password), rue, no_rue, code_postal, ville))
                 # db.commit() permet de valider une modification de la base de données
                 db.commit()
                 # On ferme la connexion à la base de données pour éviter les fuites de mémoire

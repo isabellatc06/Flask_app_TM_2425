@@ -1,19 +1,136 @@
-{% extends 'base.html' %}
-
-{% block title %}
-  S'enregistrer
-{% endblock %}
+<!doctype html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 
 {% block content %}
   <div class="content-register">
-    <div>
-      <form method="post">
-        <label for="username">Nom d'utilisateur</label>
-        <input name="username" id="username" required>
-        <label for="password">Mot de passe</label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" value="S'enregistrer">
-      </form>
+        <div>
+            
+            <!--Créer une barre d'un ahut pour le nom de la marque et le bouton du retour au site-->
+            <div class="bord_du_haut">
+
+            <!--Créer un bloc pour l'image et le texte'retour au site'-->
+            <div class="retour_au_site">
+                <!--Image-->
+                <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
+                <!--Texte-->
+                <h3>Retour au site</h3>    
+            </div>
+            
+            <!--Texte: Marque-->
+            <div class="marque_login">
+                <h1>Marque</h1>
+            </div>
+        </div>
+
+            <form method="post">
+                <!--Créer un bloc avec tous les differents champs à remplir-->
+                <div class="elements_register">
+                    <!--s'inscrire texte-->
+                    <div class="s_inscrire_carre">    
+                        <div class="s_inscrire">
+                            <h1>S'inscrire</h1>
+                        </div>
+                    </div>
+
+                    <!--Saisir son adresse e-mail-->
+                    <div class="adresse_e_mail_register">
+                        <!--Carré ou sera écrit de saisir son adresse e-mail-->
+                        <div class="carre_adresse_register">
+                            <h3>Adresse e-mail</h3>
+                        </div>
+                        <!--Carré ou l'utilisateur doit saisir son adresse e-mail -->
+                        <div id="username_register">
+                            <input name="username" required>
+                        </div>
+                    </div>
+                    <!--Saisir son mot de passe--> 
+                    <div class="mot_de_passe_register">
+                        <!--Carré ou sera écrit mot de passe-->
+                        <div class="carre_mot_de_passe_register">
+                            <h3>Mot de passe</h3>
+                        </div>
+
+                        <!--Carré ou l'utilisateur doit saisir son mot de passe-->
+                        <div id="password_register">
+                            <input type="password" name="password" required>
+                        </div>
+                    </div>
+
+                    <!--Saisir son adresse et no de rue-->
+                    <div class="adresse_norue_register">
+                        <!--Saisir son adresse-->
+                        <div class="adresse_rue_register">
+
+                            <!--Carré ou sera écrit de mettre la rue de son adresse-->
+                            <div class="carre_adresse_rue_register">
+                                <h3>Rue</h3>
+                            </div>
+                            <!--Carre ou l'utilisateur saisir la rue de son adresse-->
+                            <div id="rue_register">
+                                <input name="rue" required>
+                            </div>
+                            
+                        </div>
+
+                        <!--Saisir son numero-->
+                        <div class="adresse_no_register">
+                            <!--Carré ou sera écrit de mettre le no de son adresse-->
+                            <div class="carre_adresse_no_register">
+                                <h3>N°</h3>
+                            </div>
+
+                            <!--Carré ou l'utilisateur saisie le numero de son adresse-->
+                            <div id="no_register"> 
+                                <input name="no_rue" required>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--Saisir son code postal-->
+                    <div class="code_postal_register">
+
+                        <!--Carré ou sera écrit de mettre le code postal-->
+                        <div class="carre_code_postal_register">
+                            <h3>Code postal</h3>
+                        </div>
+                        <!--Carre ou l'utilisateur doit saisir son code postal-->
+                        <div id="code_register">
+                            <input name="code_postal" required>
+                        </div>
+
+                    </div>
+
+                    <!--Saisir sa ville-->
+                    <div class="ville_register">
+
+                        <!--Carre ou sera écrit de mettre sa ville-->
+                        <div class="carre_ville_register">
+                            <h3>Ville</h3>
+                        </div>
+
+                        <!--Carre ou l'utilisateur doit saisir sa ville-->
+                        <div id="city_register">
+                            <input name="ville" required>
+                        </div>
+
+                    </div>
+
+                    <!--Bouton se connecter-->
+                    <div class="s_inscrire_register">
+                        <input type="submit" value="S'inscrire" class="inscrire_register">
+                    </div>
+
+                    
+                
+
+                </div>
+            
+
+    
     
       {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>

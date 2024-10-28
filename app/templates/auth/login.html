@@ -12,12 +12,12 @@
         <div class="bord_du_haut">
 
         <!--Créer un bloc pour l'image et le texte'retour au site'-->
-        <div class="retour_au_site">
-          <!--Image-->
-          <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
-          <!--Texte-->
-          <h3>Retour au site</h3>
-        </div>
+          <div class="retour_au_site">
+              <!--Image-->
+              <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
+              <!--Texte-->
+              <h3>Retour au site</h3>    
+          </div>
         
         <!--Texte: Marque-->
         <div class="marque_login">
@@ -30,13 +30,62 @@
         <div class="photo">
           <img src="https://smize.pl/pol_pl_Sukienka-maxi-Fuerta-zielona-Cocomore-1394_2.jpg" />
         </div>
-        <div >
-          <label for="username" >Nom d'utilisateur</label>
-          <input name="username" id="username" required>
-          <label for="password">Mot de passe</label>
-          <input type="password" name="password" id="password" required>
-          <input type="submit" value="Se connecter">
+
+        <!--Partie de droite-->
+        <div class="bas_droite">
+          <!--Texte: Se connecter-->
+          <div id="se_connecter">
+            <h1>Se connecter</h1>
+          </div>
+          <!--Saisir son adresse e-mail-->
+          <div class="adresse_e_mail_login">
+            <!--Carré ou sera écrit de saisir son adresse e-mail-->
+            <div class="carre_adresse_login">
+              <h3>Adresse e-mail</h3>
+            </div>
+            <!--Carré ou l'utilisateur doit saisir son adresse e-mail -->
+            <div id="username_login">
+              <input name="username" required>
+            </div>
+          </div>
+          
+          <!--Saisir son mot de passe-->
+          <div class="mot_de_passe_login">
+            <!--Carré ou sera écrit qu'il faut saisir son mot de passe-->
+            <div class="carre_mot_de_passe_login">
+              <h3>Mot de passe</h3>
+            </div>
+            <!--Carré ou l'utilisateur doit saisir son mot de passe-->
+            <div class="password_login">
+              <input type="password" name="password" required>
+            </div>
+          </div>
+
+          <!--Lien pour la page s'inscrire-->
+          <nav>
+            <div class="textes_login">
+                <a href="{{ url_for('auth.register') }}">
+                    <h3>Vous n'avez pas encore un compte ?</h3>
+                </a>
+            </div>
+          </nav>
+          
+          <!--Lien pour modifier le mot de passe-->
+          <nav>
+            <div class="textes_login">
+                <a href="{{ url_for('auth.register') }}">
+                    <h3>Avez vous oublié votre mot de passe ?</h3>
+                </a>
+            </div>
+          </nav>
+
+          <!--Bouton se connecter-->
+          <div class="se_connecter_login">
+            <input type="submit" value="Continuer" class="continuer_login">
+          </div>
+
         </div>
+
       </div>
       </form>
 
