@@ -434,3 +434,61 @@ gap: 40px;
   font-size: larger;
   font-weight: 900;
 } 
+
+.contenu_index {
+  margin-top: 30px;
+  width: 90%; /* Réduit la largeur pour que le margin-left ne déborde pas */
+  margin-left: auto;
+  margin-right: auto; /* Centre l’élément avec une marge automatique */
+  display: inline-block;
+  gap: 20px; /* Utilise un espace fixe pour un meilleur contrôle */
+  flex-flow: row wrap;
+}
+.contenu_produit{
+  width: 170px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img_produit{
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.img_du_produit{
+  width: 100%;
+  height: px;
+}
+
+.img_icon_coeur{
+  position: absolute; 
+  top: 10px; 
+  left: 80%; 
+  width: 30px;
+  height: 30px;
+}
+
+.description_produit{
+  margin-top: 25%;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(199, 193, 193, 0.973);
+  
+}
+
+.description_textes{
+  margin-top: 2px;
+  font-family: Arial;
+  font-size: 13px;
+}
+
+.img_icon_produit{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 140px;
+  top: 47%;
+}

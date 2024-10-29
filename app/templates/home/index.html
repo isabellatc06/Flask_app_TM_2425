@@ -4,12 +4,245 @@
   Template de base
 {% endblock %}
 
-{% block content%}
-  <div class="content-index">
-    {% if g.user %}
-      <h1>Vous êtes connectés</h1>
-    {% else %}
-      <h1>Bienvenue sur le template de base de votre TM :)</h1>
-    {% endif %}
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% block content %}
+<div class="contenu_index">
+
+  <!--Produit 1-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/612c22c8ee9e4525b5a3d0b83caee8af/abc98e4917204d699b6f3ebbf7ceeae8.jpg?imwidth=1800" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Robe d'été</h3>
+        <h3>CHF 50.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+
+
+    <!--Produit 2-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/861d84367f044eb9b3ba09d3e4b9795f/a4d198e6105d4219b5c6835a13d691f5.jpg?imwidth=1800&filter=packshot" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Baskets basses Asics</h3>
+        <h3>CHF 180.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+    <!--Produit 3-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/94dbf27f98d1467f872c6be420f58e96/ade753a3c1dc4e4985157a62395dfcf0.jpg?imwidth=762" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>T-shirts basiques</h3>
+        <h3>CHF 41.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+
+    <!--Produit 4-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/ebbd7ec15d794db785e1485835aa9cf5/d54657971a6746a982cd1b531673414c.jpg?imwidth=1800&filter=packshot" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Cartable d'école</h3>
+        <h3>CHF 29.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+
+
+    <!--Produit 5-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/da73d38fe77340d1acef5b3e59773838/f8e78dafe28a45c0af47ea66d8150576.jpg?imwidth=1800&filter=packshot" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Sweat zippé</h3>
+        <h3>CHF 36.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+
+
+    <!--Produit 6-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/0830e8a70396489b942e8323b083dd5b/f39b64fca69243dabf602391b4fe81bb.jpg?imwidth=1800" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Pantalon bermuda</h3>
+        <h3>CHF 45.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+
+
+
+    <!--Produit 7-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/f270cbeed1e745468926ee5dd72b9232/f5d5ab6f41ce40e2b8f2f922fc1d14d4.jpg?imwidth=1800&filter=packshot" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Casquette</h3>
+        <h3>CHF 15.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <!--Produit 8-->
+  <div class="contenu_produit">
+    <!--Image du produit-->
+    <div class="img_produit">
+
+      <!--Produit-->
+      <img src="https://img01.ztat.net/article/spp-media-p1/f935e98a4569395a9759a0986898fb3c/6a35a8aad69841e1b1da988ea4ac399a.jpg?imwidth=1800&filter=packshot" 
+      class="img_du_produit" />
+      
+      <!--Image pour le coeur-->
+      <img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="img_icon_coeur" />
+    </div>
+    <!--Description du produit-->
+    <div class="description_produit">
+      <div class="description_textes">
+        <h3>Pullover</h3>
+        <h3>CHF 40.00</h3>
+      </div>
+
+      <!--Icon chariot-->
+      <div class="img_icon_produit">
+        <img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" />
+      </div>
+
+    </div>
+
   </div>
+
+
+
+</div>
 {% endblock %}
+
+</body>
+</html>
