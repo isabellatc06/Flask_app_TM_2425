@@ -106,8 +106,6 @@
   flex-direction: row; 
   gap: 10%;
   align-items: center; 
-
-
 }
 
 
@@ -143,11 +141,18 @@
 .retour_au_site{
   margin-left: 50px;
   width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.retour_au_site a{
   color: #89CFEF;
   font-family: Arial;
   font-size: small;
-  display: flex;
-  align-items: center;
+  text-decoration: none;
 }
 
 .marque_login{
@@ -247,11 +252,13 @@ gap: 40px;
 .textes_login{
   margin-top: 30px;
   margin-bottom: 20px;
+}
+
+.textes_login a{
   font-family: Arial;
   color: #89CFEF;
   text-decoration: none;
 }
-
 
 .se_connecter_login input{
   width: 520px;
