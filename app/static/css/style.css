@@ -72,7 +72,8 @@
     display: flex;
     gap: 10px;
     justify-content: flex-start;        
-    align-items: normal;  
+    align-items: normal;
+    position: static;  
     
 }
 
@@ -97,8 +98,8 @@
 
 }
 
-#iconsposition{
-  margin-left: 20px;
+.iconsposition{
+  /*margin-left: 20px;*/
   margin-right: 2%;
   width: 25%;
   justify-content: flex-end;
@@ -106,6 +107,14 @@
   flex-direction: row; 
   gap: 10%;
   align-items: center; 
+  position: sticky;
+}
+
+@media (max-width: 768px) {
+  .iconsposition {
+    top: 10px; /* Modifie la position pour les petits écrans */
+    left: 10px;
+  }
 }
 
 
@@ -117,17 +126,66 @@
 
 .vetements{
   width: 100%;
-  height: 20px;
+  height: 100px;
   margin-bottom: 5px;
-  margin-left: 20px;
+  margin-left: 0px;
+  display: flex;
+  /*flex-direction: row;*/
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+
+}
+
+.design_vetements{
   background-color: #008ECC;
-  font-size: medium;
+  font-size: large;
   font-family: Arial;
   color: #89CFEF;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;  
+}
 
+
+.vetements li {
+  position: relative;
+}
+
+.vetements a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 20px;
+  display: block;
+}
+
+.vetements a:hover {
+  background-color: #89CFEF;
+  color:#008ECC;
+}
+
+/* Style du dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 35px; 
+  left: 0px; 
+  background-color: #89CFEF;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /*min-width: 200px;*/
+  font-family: Arial;
+  color:#008ECC;
+  font-size: medium;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .bord_du_haut{
@@ -138,14 +196,15 @@
   gap: 40px;
 }
 
-.retour_au_site{
-  margin-left: 50px;
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px;
+.retour_au_site {
+  margin-left: 50px; /* Décalage gauche */
+  width: 40%; /* Largeur globale du conteneur */
+  height: auto; /* La hauteur s'ajuste au contenu */
+  display: flex; /* Active le modèle flexbox */
+  flex-direction: row; /* Les éléments sont alignés en ligne (par défaut pour flexbox) */
+  align-items: center; /* Centre les éléments verticalement */
+  justify-content: space-between; /* Espace égal entre les éléments */
+  gap: 5px; /* Espace entre chaque élément */
 }
 
 .retour_au_site a{
