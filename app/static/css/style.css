@@ -110,13 +110,6 @@
   position: sticky;
 }
 
-@media (max-width: 768px) {
-  .iconsposition {
-    top: 10px; /* Modifie la position pour les petits écrans */
-    left: 10px;
-  }
-}
-
 
 .icons{
     display: flex;
@@ -130,7 +123,6 @@
   margin-bottom: 5px;
   margin-left: 0px;
   display: flex;
-  /*flex-direction: row;*/
   gap: 20px;
   list-style: none;
   margin: 0;
@@ -151,7 +143,7 @@
 }
 
 .vetements a {
-  color: white;
+  color: #89CFEF;
   text-decoration: none;
   padding: 5px 20px;
   display: block;
@@ -162,31 +154,73 @@
   color:#008ECC;
 }
 
-/* Style du dropdown */
+
 .dropdown-menu {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 2;
-  top: 35px; 
-  left: 0px; 
+  margin-top: 50px; 
+  left: 0px;
+  margin-left: 20px; 
+  width: 100%;
+  height: 50vh;
   background-color: #89CFEF;
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
-  /*min-width: 200px;*/
+  min-height: 50%;
   font-family: Arial;
   color:#008ECC;
   font-size: medium;
 }
 
+.dropdown-menu li{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: start;
+  padding: 5px;
+  width: 50%;
+}
 .dropdown-menu li a {
-  padding: 10px 15px;
+  color: #008ECC;
+  text-decoration: none;
+  font-size: 18px;
+}
+.dropdown-menu li a:hover{
+  background-color: #008ECC;
+  color: #89CFEF;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+.colonnes{
+  display: flex;
+  align-items: flex-start;
+  gap: 50px; 
+}
+
+.block1 .block2{
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.options{
+  width: 400px;
+  height: 50px;
+}
+
+.options a{
+  display: block; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
 
 .bord_du_haut{
   width: 100%;
@@ -197,14 +231,14 @@
 }
 
 .retour_au_site {
-  margin-left: 50px; /* Décalage gauche */
-  width: 40%; /* Largeur globale du conteneur */
-  height: auto; /* La hauteur s'ajuste au contenu */
-  display: flex; /* Active le modèle flexbox */
-  flex-direction: row; /* Les éléments sont alignés en ligne (par défaut pour flexbox) */
-  align-items: center; /* Centre les éléments verticalement */
-  justify-content: space-between; /* Espace égal entre les éléments */
-  gap: 5px; /* Espace entre chaque élément */
+  margin-left: 50px; 
+  width: 40%; 
+  height: auto; 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 5px; 
 }
 
 .retour_au_site a{
