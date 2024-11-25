@@ -204,15 +204,31 @@
 }
 
 .block1 .block2{
-  width: 100%;
+  width: 500px;
   height: 100%;
-  gap: 40px;
+  gap: 100px;
+  margin-top: 10px;
 }
 
-.options{
+/*.options{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  width: 400px;
+  height: 50px;
+}*/
+
+.options {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between;
+  gap: 5px;
   width: 400px;
   height: 50px;
 }
+
 
 .options a{
   display: block; 
@@ -220,6 +236,11 @@
   overflow: hidden; 
   text-overflow: ellipsis; 
 }
+
+.options img:hover {
+  color: #008ECC; /* Change la couleur du texte au survol */
+}
+
 
 
 .bord_du_haut{
