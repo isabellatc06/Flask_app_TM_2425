@@ -366,6 +366,9 @@ gap: 40px;
 .textes_login{
   margin-top: 30px;
   margin-bottom: 20px;
+  font-family: Arial;
+  color: #89CFEF;
+  text-decoration: none;
 }
 
 .textes_login a{
