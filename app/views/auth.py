@@ -68,7 +68,6 @@ def login():
         # On récupère l'utilisateur avec le username spécifié (une contrainte dans la db indique que le nom d'utilisateur est unique)
         # La virgule après username est utilisée pour créer un tuple contenant une valeur unique
         user = db.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
-        print("BOUHHHHHHHHHHHH")
         print(user)
         # On ferme la connexion à la base de données pour éviter les fuites de mémoire
         close_db()
