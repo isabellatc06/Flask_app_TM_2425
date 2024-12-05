@@ -8,7 +8,7 @@
 <body>
     <header id="header1">
         <div class="Marque">
-            <h1>MARQUE</h1>
+            <a href="{{url_for('home.landing_page')}}">MARQUE</a>
         </div>
 
         <!--Création de la barre de recherche-->
@@ -59,21 +59,21 @@
                 <ul class="dropdown-menu">
                     <div class="colonnes">
                         <div class="block1">
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/8365/8365472.png" class="img"><a class="option_texte">Robes</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/3345/3345393.png" class="img"><a class="option_texte">Tops et T-shirts</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/2806/2806102.png" class="img"><a class="option_texte">Chemises et blusons</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/1348/1348192.png" class="img"><a class="option_texte">Sweats et sweats à capuche</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/6363/6363016.png" class="img"><a class="option_texte">Pulls et gilets</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/3515/3515916.png" class="img"><a class="option_texte">Vestes et blazers</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/6266/6266246.png" class="img"><a class="option_texte">Pantalons et leggins</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/8365/8365472.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_robes') }}">Robes</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/3345/3345393.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_tops') }}">Tops et T-shirts</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/2806/2806102.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_chemises') }}">Chemises et blusons</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/1348/1348192.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_sweats') }}">Sweats et sweats à capuche</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/6363/6363016.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_pulls') }}">Pulls et gilets</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/3515/3515916.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_vestes') }}">Vestes et blazers</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/6266/6266246.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_pantalons') }}">Pantalons et leggins</a></li>
                         </div>
                         <div class="block2">
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/2806/2806058.png" class="img"><a class="option_texte">Jeans</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/1736/1736901.png" class="img"><a class="option_texte">Jupes et shorts</a></li>
-                            <li class="options"><img src="https://cdn0.iconfinder.com/data/icons/water-park-28/64/diving_suit_scuba_underwater_ocean_swim-512.png" class="img"><a class="option_texte">Combinaison</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/7759/7759543.png" class="img"><a class="option_texte">Maillots de bain</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/1146/1146650.png" class="img"><a class="option_texte">Pyjamas et nuisettes</a></li>
-                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/5479/5479005.png" class="img"><a class="option_texte">Chaussures</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/2806/2806058.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_jeans') }}">Jeans</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/1736/1736901.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_jupes') }}">Jupes et shorts</a></li>
+                            <li class="options"><img src="https://cdn0.iconfinder.com/data/icons/water-park-28/64/diving_suit_scuba_underwater_ocean_swim-512.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_combinaisons') }}">Combinaison</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/7759/7759543.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_maillots') }}">Maillots de bain</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/1146/1146650.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_pyjamas') }}">Pyjamas et nuisettes</a></li>
+                            <li class="options"><img src="https://cdn-icons-png.flaticon.com/512/5479/5479005.png" class="img"><a class="option_texte" href="{{ url_for('femme.femme_chaussures') }}">Chaussures</a></li>
                         </div>
                     </div>
                 </ul>

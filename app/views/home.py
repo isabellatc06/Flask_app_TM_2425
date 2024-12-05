@@ -12,19 +12,9 @@ home_bp = Blueprint('home', __name__)
 def landing_page():
     db = get_db()
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM produits")
+    cursor.execute("SELECT * FROM produits LIMIT 20")
     produits = cursor.fetchall()
-
-    id_produits = request.args.get('id_produits')
-    nom = request.args.get('nom')
-    description = request.args.get('description')
-    taille = request.args.get('taille')
-    prix = request.args.get('prix')
-    id_categorie_produits = request.args.get('id_categorie_produits')
-    chemin_vers_le_fichier_img = request.args.get('chemin_vers_le_fichier_img')
-
-    
-    
+  
     return render_template('home/index.html', produits=produits)
 
 # Gestionnaire d'erreur 404 pour toutes les routes inconnues

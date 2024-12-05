@@ -14,7 +14,7 @@ from app.views.auth import auth_bp
 from app.views.user import user_bp
 from app.views.forget import forget_bp
 from app.views.reset import reset_bp
-
+from app.views.femme import femme_bp
 # Fonction automatiquement appelée par le framework Flask lors de l'exécution de la commande python -m flask run permettant de lancer le projet
 # La fonction retourne une instance de l'application créée
 def create_app():
@@ -33,6 +33,7 @@ def create_app():
     app.register_blueprint(user_bp)
     app.register_blueprint(forget_bp)
     app.register_blueprint(reset_bp)
+    app.register_blueprint(femme_bp)
 
    
     # On retourne l'instance de l'application Flask

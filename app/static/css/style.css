@@ -56,10 +56,12 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.Marque{
+.Marque a{
   margin-left: 50px;
   font-family: Arial;
   color: #FFFFFF;
+  text-decoration: none;
+  font-size: 30px;
   text-shadow: 2px 1px 2px rgb(from black 0 0 0);
 }
 
