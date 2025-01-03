@@ -42,7 +42,7 @@ def register():
                 flash(error)
                 return redirect(url_for("auth.register"))
             
-            return redirect(url_for("auth.login"))
+            return redirect(url_for("user.show_profile"))
          
         else:
             error = "Nom d'utilisateur ou mot de passe invalide"
@@ -86,7 +86,7 @@ def login():
             session.clear()
             session['user_id'] = user['id_users']
             # On redirige l'utilisateur vers la page principale une fois qu'il s'est connecté
-            return redirect("/")
+            return redirect(url_for("user.show_profile"))
         
         else:
             # En cas d'erreur, on ajoute l'erreur dans la session et on redirige l'utilisateur vers le formulaire de login
@@ -103,29 +103,26 @@ def logout():
 
     # On redirige l'utilisateur vers la page principale une fois qu'il s'est déconnecté
     return redirect("/")
-
+#hola
 
 # Fonction automatiquement appelée à chaque requête (avant d'entrer dans la route) sur une route appartenant au blueprint 'auth_bp'
 # La fonction permet d'ajouter un attribut 'user' représentant l'utilisateur connecté dans l'objet 'g' 
+
 @auth_bp.before_app_request
 def load_logged_in_user():
-
-    # On récupère l'id de l'utilisateur stocké dans le cookie session
     user_id = session.get('user_id')
+    # Liste des routes accessibles sans connexion
+    accessible_routes = ['auth.login', 'auth.register', 'static']
 
-    # Si l'id de l'utilisateur dans le cookie session est nul, cela signifie que l'utilisateur n'est pas connecté
-    # On met donc l'attribut 'user' de l'objet 'g' à None
-    if user_id is None:
+    if user_id is None and request.endpoint not in accessible_routes:
         g.user = None
-
-    # Si l'id de l'utilisateur dans le cookie session n'est pas nul, on récupère l'utilisateur correspondant et on stocke
-    # l'utilisateur comme un attribut de l'objet 'g'
-    else:
-         # On récupère la base de données et on récupère l'utilisateur correspondant à l'id stocké dans le cookie session
+        return redirect(url_for('auth.login'))
+    
+    elif user_id is not None:
         db = get_db()
         g.user = db.execute('SELECT * FROM users WHERE id_users = ?', (user_id,)).fetchone()
-        # On ferme la connexion à la base de données pour éviter les fuites de mémoire
         close_db()
+
 
 
 
