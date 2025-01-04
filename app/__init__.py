@@ -16,6 +16,7 @@ from app.views.forget import forget_bp
 from app.views.reset import reset_bp
 from app.views.produit import produit_bp
 from app.views.connect import connect_bp
+from app.views.admin import admin_bp
 
 
 # Fonction automatiquement appelée par le framework Flask lors de l'exécution de la commande python -m flask run permettant de lancer le projet
@@ -38,6 +39,7 @@ def create_app():
     app.register_blueprint(reset_bp)
     app.register_blueprint(produit_bp)
     app.register_blueprint(connect_bp)
+    app.register_blueprint(admin_bp)
     
    
     # On retourne l'instance de l'application Flask
