@@ -681,10 +681,13 @@ gap: 40px;
   margin-top: 5%;
 }
 .nom_content{
-  margin-left: 15%;
+  margin-left: 10%;
   height: 100px;
-  width: 100px;
+  width: 200px;
   margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -695,10 +698,13 @@ gap: 40px;
 }
 
 .name_user{
-  margin-left: 5px;
   color: #008ECC;
   font-size: 24px; 
   font-weight: bold;
+  white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
+  overflow: visible; /* Cache le texte qui dépasse */
+  text-overflow: clip; /* Ajoute des points de suspension si le texte dépasse */
+  max-width: 100%; /* Ajuste à la largeur du conteneur parent */
 }
 
 

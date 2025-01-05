@@ -4,7 +4,7 @@ from app.db.db import get_db, close_db
 import os
 
 # Création d'un blueprint contenant les routes ayant le préfixe /auth/...
-admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
+admin_bp = Blueprint('admin', __name__)
 
 # Route /auth/register
 @admin_bp.route('/produits_admin', methods=('GET', 'POST'))

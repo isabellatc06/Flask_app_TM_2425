@@ -2,9 +2,28 @@ from flask import (Blueprint, flash, g, redirect, render_template, request, sess
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.db.db import get_db, close_db
 import os
+from functools import wraps
+
 
 # Création d'un blueprint contenant les routes ayant le préfixe /auth/...
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
+
+
+def admin_required(view):
+    @wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None or g.user['role'] != 'admin':
+            flash("Accès réservé aux administrateurs.", "error")
+            return redirect(url_for('auth.login'))
+        return view(**kwargs)
+    return wrapped_view
+
+# Route d'administration
+@auth_bp.route('/admin')
+@admin_required
+def admin():
+    return render_template('auth/admin2.html')
+
 
 # Route /auth/register
 @auth_bp.route('/register', methods=('GET', 'POST'))
@@ -55,43 +74,33 @@ def register():
 # Route /auth/login
 @auth_bp.route('/login', methods=('GET', 'POST'))
 def login():
-    # Si des données de formulaire sont envoyées vers la route /login (ce qui est le cas lorsque le formulaire de login est envoyé)
     if request.method == 'POST':
-
-        # On récupère les champs 'username' et 'password' de la requête HTTP
         username = request.form['username']
         password = request.form['password']
 
-        # On récupère la base de données
         db = get_db()
-        
-        # On récupère l'utilisateur avec le username spécifié (une contrainte dans la db indique que le nom d'utilisateur est unique)
-        # La virgule après username est utilisée pour créer un tuple contenant une valeur unique
         user = db.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
-        print(user)
-        # On ferme la connexion à la base de données pour éviter les fuites de mémoire
         close_db()
 
-        # Si aucun utilisateur n'est trouve ou si le mot de passe est incorrect
-        # on crée une variable error 
         error = None
         if user is None:
             error = "Nom d'utilisateur incorrect"
         elif not check_password_hash(user['password'], password):
             error = "Mot de passe incorrect"
 
-        # S'il n'y pas d'erreur, on ajoute l'id de l'utilisateur dans une variable de session
-        # De cette manière, à chaque requête de l'utilisateur, on pourra récupérer l'id dans le cookie session
         if error is None:
             session.clear()
             session['user_id'] = user['id_users']
-            # On redirige l'utilisateur vers la page principale une fois qu'il s'est connecté
+
+            # Redirige les admins vers l'espace admin
+            if user['role'] == 'admin':
+                return redirect(url_for('auth.admin'))
+            
+            # Redirige les utilisateurs normaux vers leur profil
             return redirect(url_for("user.show_profile"))
         
-        else:
-            # En cas d'erreur, on ajoute l'erreur dans la session et on redirige l'utilisateur vers le formulaire de login
-            flash(error)
-            return redirect(url_for("auth.login"))
+        flash(error)
+        return redirect(url_for("auth.login"))
     else:
         return render_template('auth/login.html')
 
@@ -120,8 +129,11 @@ def load_logged_in_user():
     
     elif user_id is not None:
         db = get_db()
-        g.user = db.execute('SELECT * FROM users WHERE id_users = ?', (user_id,)).fetchone()
+        g.user = db.execute(
+            'SELECT id_users, username, role FROM users WHERE id_users = ?', (user_id,)
+        ).fetchone()
         close_db()
+
 
 
 
