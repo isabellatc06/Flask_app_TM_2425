@@ -1,11 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Page pour administrateur
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page Admin</title>
 </head>
 <body>
-    <h1>Bienvenue, Administrateur {{ g.user['username'] }}</h1>
+    <h1 id="bienvenue_admin">Bienvenue, Administrateur {{ g.user['username'] }}</h1>
     <p>Cette section est réservée aux administrateurs.</p>
     <a href="{{ url_for('auth.logout') }}">Se déconnecter</a>
 </body>

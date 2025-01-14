@@ -5,18 +5,6 @@ from app.db.db import get_db, close_db
 produit_bp = Blueprint('produit', __name__)
 
 
-'''
-# Route pour les robes
-@femme_bp.route('/femme_robes', methods=['GET', 'POST'])
-def femme_robes():
-    db = get_db()
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM produits WHERE categorie = ?", ("femme_robes",))
-    produits = cursor.fetchall()
-    close_db()
-    return render_template('femme/robes.html', produits=produits)
-'''
-
 
 @produit_bp.route('/produit/<categorie>', methods=['GET', 'POST'])
 def produit_categorie(categorie):

@@ -95,209 +95,54 @@
                 </div>
 
                 <h2 id="categorie_titre">Choisissez une categorie pour le produit :</h2>
-                <div class="radio-container">
-                    <div class="column">
+                <div class="radio-container" id="categories-container"></div>
 
-                        <!--Categories de femme-->
-                        <h3 class="categorie4">Femme</h3>
-                        <ul class="radio-list">
-                            <li>
-                                <input type="radio" id="femme_robes" name="categorie" value="femme_robes">
-                                <label for="femme_robes">Robe</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_tops" name="categorie" value="femme_tops">
-                                <label for="femme_tops">Tops et T-shirts</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_chemises" name="categorie" value="femme_chemises">
-                                <label for="femme_chemises">Chemises et blusons</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_sweats" name="categorie" value="femme_sweats">
-                                <label for="femme_sweats">Sweats et sweats à capuche</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_pulls" name="categorie" value="femme_pulls">
-                                <label for="femme_pulls">Pulls et gilets</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_vestes" name="categorie" value="femme_vestes">
-                                <label for="femme_vestes">Vestes et blazers</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_pantalons" name="categorie" value="femme_pantalons">
-                                <label for="femme_pantalons">Pantalons et leggins</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_jeans" name="categorie" value="femme_jeans">
-                                <label for="femme_jeans">Jeans</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_jupes" name="categorie" value="femme_jupes">
-                                <label for="femme_jupes">Jupes et shorts</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_combinaisons" name="categorie" value="femme_combinaisons">
-                                <label for="femme_combinaisons">Combinaison</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_maillots" name="categorie" value="femme_maillots">
-                                <label for="femme_maillots">Maillots de bain</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_pyjamas" name="categorie" value="femme_pyjamas">
-                                <label for="femme_pyjamas">Pyjamas et nuisettes</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="femme_chaussures" name="categorie" value="femme_chaussures">
-                                <label for="femme_chaussures">Chaussures</label>
-                            </li>
-                        </ul>
-                    </div>
+                <script>
+                const categories = {
+                    Femme: ["Robe", "Tops et T-shirts", "Chemises et blusons", "Sweats et sweats à capuche", "Pulls et gilets", "Vestes et blazers", "Pantalons et leggins", "Jeans", "Jupes et shorts", "Combinaison", "Maillots de bain", "Pyjamas et nuisettes", "Chaussures"],
+                    Homme: ["T-shirt et polos", "Chemises", "Sweats et hoodies", "Mailles", "Vestes et manteaux", "Pantalons", "Jeans", "Shorts et bermudas", "Joggings", "Maillots de bain", "Pyjamas", "Chaussures"],
+                    Fille: ["Robes", "Vêtements d'extérieur", "Pulls et gilets", "Pantalons", "Jeans", "Jupes et shorts", "Maillots de bain", "Pyjamas", "Chaussures"],
+                    Garçon: ["Vêtements d'extérieur", "T-shirts et débardeurs", "Pulls et gilets", "Pantalons", "Jeans", "Maillots de bain", "Pyjamas", "Chaussures"]
+                };
 
-                    <!--Categories d'homme-->
-                    <div class="column">
-                        <h3 class="categorie4">Homme</h3>
-                        <ul class="radio-list">
-                            <li>
-                                <input type="radio" id="homme_polos" name="categorie" value="homme_polos">
-                                <label for="homme_polos">T-shirt et polos</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_chemises" name="categorie" value="homme_chemises">
-                                <label for="homme_chemises">Chemises</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_sweats" name="categorie" value="homme_sweats">
-                                <label for="homme_sweats">Sweats et hoodies</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_mailles" name="categorie" value="homme_mailles">
-                                <label for="homme_mailles">Mailles</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_vestes" name="categorie" value="homme_vestes">
-                                <label for="homme_vestes">Vestes et manteaux</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_pantalons" name="categorie" value="homme_pantalons">
-                                <label for="homme_pantalons">Pantalons</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_jeans" name="categorie" value="homme_jeans">
-                                <label for="homme_jeans">Jeans</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_shorts" name="categorie" value="homme_shorts">
-                                <label for="homme_shorts">Shorts et bermudas</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_joggings" name="categorie" value="homme_joggings">
-                                <label for="homme_joggings">Joggings</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_maillots" name="categorie" value="homme_maillots">
-                                <label for="homme_maillots">Maillots de bain</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_pyjamas" name="categorie" value="homme_pyjamas">
-                                <label for="homme_pyjamas">Pyjamas</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="homme_chaussures" name="categorie" value="homme_chaussures">
-                                <label for="homme_chaussures">Chaussures</label>
-                            </li>
+                const container = document.getElementById('categories-container');
 
-                        </ul>
-                    </div>
-                    
-                    
-                    <!--Catégories pour fille-->
-                    <div class="column">
-                        <h3 class="categorie4">Fille</h3>
-                        <ul class="radio-list">
-                            <li>
-                                <input type="radio" id="fille_robes" name="categorie" value="fille_robes">
-                                <label for="fille_robes">Robes</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_vetements" name="categorie" value="fille_vetements">
-                                <label for="fille_vetements">Vêtements d'extérieur</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_pulls" name="categorie" value="fille_pulls">
-                                <label for="fille_pulls">Pulls et gilets</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_pantalons" name="categorie" value="fille_pantalons">
-                                <label for="fille_pantalons">Pantalons</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_jeans" name="categorie" value="fille_jeans">
-                                <label for="fille_jeans">Jeans</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_jupes" name="categorie" value="fille_jupes">
-                                <label for="fille_jupes">Jupes et shorts</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_maillots" name="categorie" value="fille_maillots">
-                                <label for="fille_maillots">Maillots de bain</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_pyjamas" name="categorie" value="fille_pyjamas">
-                                <label for="fille_pyjamas">Pyjamas</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="fille_chaussures" name="categorie" value="fille_chaussures">
-                                <label for="fille_chaussures">Chaussures</label>
-                            </li>
-                        </ul>
-                    </div>
+                for (const [category, items] of Object.entries(categories)) {
+                    const column = document.createElement('div');
+                    column.classList.add('column');
 
+                    const categoryTitle = document.createElement('h3');
+                    categoryTitle.classList.add('categorie4');
+                    categoryTitle.textContent = category;
+                    column.appendChild(categoryTitle);
 
-                    <!--Catégorie por garcon-->
-                    <div class="column">
-                        <h3 class="categorie4">Garçon</h3>
-                        <ul class="radio-list">
-                            <li>
-                                <input type="radio" id="garcon_vetements" name="categorie" value="garcon_vetements">
-                                <label for="garcon_vetements">Vêtemets d'extérieur</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_tshirts" name="categorie" value="garcon_tshirts">
-                                <label for="garcon_tshirts">T-shirts et débardeurs</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_pulls" name="categorie" value="garcon_pulls">
-                                <label for="garcon_pulls">Pulls et gilets</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_pantalons" name="categorie" value="garcon_pantalons">
-                                <label for="garcon_pantalons">Pantalons</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_jeans" name="categorie" value="garcon_jeans">
-                                <label for="garcon_jeans">Jeans</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_maillots" name="categorie" value="garcon_maillots">
-                                <label for="garcon_maillots">Maillots de bain</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_pyjamas" name="categorie" value="garcon_pyjamas">
-                                <label for="garcon_pyjamas">Pyjamas</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="garcon_chaussures" name="categorie" value="garcon_chaussures">
-                                <label for="garcon_chaussures">Chaussures</label>
-                            </li>
-                            
+                    const list = document.createElement('ul');
+                    list.classList.add('radio-list');
 
-                        </ul>
-                    </div>
-                </div>
+                    items.forEach(item => {
+                        const listItem = document.createElement('li');
+
+                        const input = document.createElement('input');
+                        input.type = 'radio';
+                        input.id = `${category.toLowerCase()}_${item.toLowerCase().replace(/ /g, '_')}`;
+                        input.name = 'categorie';
+                        input.value = `${category.toLowerCase()}_${item.toLowerCase().replace(/ /g, '_')}`;
+
+                        const label = document.createElement('label');
+                        label.htmlFor = input.id;
+                        label.textContent = item;
+
+                        listItem.appendChild(input);
+                        listItem.appendChild(label);
+                        list.appendChild(listItem);
+                    });
+
+                    column.appendChild(list);
+                    container.appendChild(column);
+                }
+                </script>
+
+                
 
                 <!--Bouton creer-->
                 <div class="creer_admin">

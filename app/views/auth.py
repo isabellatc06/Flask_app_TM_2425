@@ -111,8 +111,8 @@ def logout():
     session.clear()
 
     # On redirige l'utilisateur vers la page principale une fois qu'il s'est déconnecté
-    return redirect("/")
-#hola
+    return redirect(url_for("home.landing_page"))
+
 
 # Fonction automatiquement appelée à chaque requête (avant d'entrer dans la route) sur une route appartenant au blueprint 'auth_bp'
 # La fonction permet d'ajouter un attribut 'user' représentant l'utilisateur connecté dans l'objet 'g' 

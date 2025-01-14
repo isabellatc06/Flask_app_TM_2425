@@ -1,6 +1,11 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+  Se connecter
+{% endblock %}
+
 <!doctype html>
 <head>
-    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -8,24 +13,6 @@
   <div class="content-register">
     <div>
       <form method="post">
-         <!--Créer une barre d'un ahut pour le nom de la marque et le bouton du retour au site-->
-        <div class="bord_du_haut">
-
-        <!--Créer un bloc pour l'image et le texte'retour au site'-->
-          <div class="retour_au_site">
-            <a href="{{url_for('home.landing_page')}}">
-              <!--Image-->
-              <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
-              <!--Texte-->
-              <h3>Retour au site</h3>    
-            </a>    
-          </div>
-        
-        <!--Texte: Marque-->
-        <div class="marque_login">
-          <h1>MARQUE</h1>
-        </div>
-      </div>
       
       <div class="bas_page">
         <!--Photo quart de la page-->

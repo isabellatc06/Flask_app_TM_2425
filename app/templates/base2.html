@@ -1,47 +1,39 @@
 <!doctype html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-    <header id="header">
-        <nav id="header-nav">
-            <div id="header-nav-logo">
+    <header id="header2">
+        <!--Créer une barre d'un ahut pour le nom de la marque et le bouton du retour au site-->
+        <div class="bord_du_haut">
+
+            <!--Créer un bloc pour l'image et le texte'retour au site'-->
+            <div class="retour_au_site">
                 <a href="{{url_for('home.landing_page')}}">
-                    <img src="{{url_for('static', filename='imgs/logo-csud.svg')}}" alt="logo-csud"/>
-                </a>
+                    <!--Image-->
+                    <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
+                    <!--Texte-->
+                    <h3>Retour au site</h3>    
+                </a>    
             </div>
-            <ul id="header-nav-menu">
-                {% if g.user %}
-                    <li><span>{{ g.user['username'] }}</span>
-                    <li><a href="{{ url_for('auth.logout') }}">Se déconnecter</a>
-                    <li><a href="{{url_for('user.show_profile')}}">Consulter son profil</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('auth.register') }}">S'enregistrer</a>
-                    <li><a href="{{ url_for('auth.login') }}">Se connecter</a>
-                {% endif %}
-            </ul>
-        </nav>
+            
+            <!--Texte: Marque-->
+            <div class="marque_login">
+                <h1>MARQUE</h1>
+            </div>
+        </div>
     </header>
-        
     <main id="main-content">
         {% block content %}{% endblock %}
     </main>
+    
 
-    <footer id="footer">
-        <div id="footer-nav">
-            <div>
-                <p>Template de base TM</p>
-            </div>
-            <div>
-                <p>Collège du Sud, 1630, Bulle </p>
-            </div>
-            <div>
-                <p>Johan Jobin</p>
-            </div>
-        </div>
-    </footer>
+
+
+
+
 
     <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
