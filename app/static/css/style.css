@@ -79,6 +79,8 @@
     
 }
 
+
+
 #rechercher{
     color: #5B5B5B;
     height: 20px;
@@ -247,17 +249,15 @@
 }
 
 .retour_au_site {
-  margin-left: 50px; 
-  width: 40%; 
-  height: auto; 
-  display: flex; 
-  flex-direction: row; 
-  align-items: center; 
-  justify-content: space-between; 
-  gap: 5px; 
+  margin-left: 50px;
+  display: flex; /* Flexbox pour aligner l'image et le texte sur une ligne */
+  align-items: center; /* Alignement vertical centré */
+  gap: 10px; /* Un peu d'espace entre l'image et le texte */
 }
 
-.retour_au_site a{
+.retour_au_site a {
+  display: flex; /* Flex pour s'assurer que l'image et le texte sont alignés */
+  align-items: center; /* Alignement centré verticalement */
   color: #89CFEF;
   font-family: Arial;
   font-size: small;
@@ -265,6 +265,7 @@
 }
 
 .marque_login{
+  margin-left: 30%;
   color: #008ECC;
   font-family: Arial;
   text-shadow: 2px 1px 1px rgb(from black 1 1 1);
@@ -676,6 +677,8 @@ gap: 40px;
 
 /*Page de profil*/
 
+
+
 .content-profile{
   margin-left: 35%;
   margin-top: 5%;
@@ -701,10 +704,10 @@ gap: 40px;
   color: #008ECC;
   font-size: 24px; 
   font-weight: bold;
-  white-space: nowrap; /* Empêche le texte de passer à la ligne suivante */
-  overflow: visible; /* Cache le texte qui dépasse */
-  text-overflow: clip; /* Ajoute des points de suspension si le texte dépasse */
-  max-width: 100%; /* Ajuste à la largeur du conteneur parent */
+  white-space: nowrap; 
+  overflow: visible; 
+  text-overflow: clip; 
+  max-width: 100%; 
 }
 
 
@@ -752,7 +755,25 @@ gap: 40px;
   font-family: Arial;
   font-weight: normal;
   font-size: medium;
+  text-decoration: none;
 }
+
+a.options_user_carre {
+  text-decoration: none; 
+  color: inherit; 
+  display: flex; 
+  align-items: center;
+}
+
+a.options_user_carre:hover {
+  background-color: #c4c4c4;
+  cursor: pointer; 
+}
+
+.options_user_carre h1 {
+  margin: 0; /* Supprime les marges par défaut */
+}
+
 
 /*Pour la page de l'administrateur*/
 
@@ -903,3 +924,50 @@ gap: 40px;
   font-weight: 900;
 }
 
+.page_administrateur{
+  width: 100%;
+  /*margin-left: 5%;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bienvenue_admin{
+  font-size: 35px;
+  font-family: Arial;
+  color:#008ECC;
+}
+
+.textes_admin{
+  margin-top: 5px;
+  font-family: Arial;
+  color: #89CFEF;
+  font-size: 25px;
+}
+ 
+
+.boutons_admin {
+  margin-top: 2%;
+  width: 100%;
+  margin-left: 30%;
+  display: flex; 
+  gap: 10px; 
+}
+
+.bouton_admin {
+  width: 250px;
+  height: 45px;
+  padding: 10px 20px;
+  background-color: #008ECC; 
+  color: #89CFEF; 
+  font-family: Arial;
+  text-decoration: none;
+  border-radius: 5px; 
+  text-align: center; 
+}
+
+.bouton_admin:hover {
+  background-color: #89CFEF; 
+  color: #008ECC;
+}

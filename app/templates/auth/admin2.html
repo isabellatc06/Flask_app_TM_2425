@@ -1,17 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block title %}
   Page pour administrateur
 {% endblock %}
 
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+
 <head>
-    <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
+
+{% block content %}
 <body>
-    <h1 id="bienvenue_admin">Bienvenue, Administrateur {{ g.user['username'] }}</h1>
-    <p>Cette section est réservée aux administrateurs.</p>
-    <a href="{{ url_for('auth.logout') }}">Se déconnecter</a>
+  <div class="page_administrateur">
+    <h1 class="bienvenue_admin">Bienvenue, Administrateur {{ g.user['username'] }}</h1>
+    <p class="textes_admin">
+      Cette section est réservée aux administrateurs. <br> Ici vous avez la possibilité d'ajouter des produits ou de consulter votre profil.
+    </p>
+  </div>
+  <div class="boutons_admin">
+    <a href="{{ url_for('user.show_profile') }}" class="bouton_admin">Consulter son profil</a>
+    <a href="{{ url_for('admin.admin') }}" class="bouton_admin">Créer un nouveau produit</a>
+  </div>
 </body>
-</html>
+{% endblock %}
