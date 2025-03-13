@@ -1,3 +1,9 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+  
+{% endblock %}
+
 <!doctype html>
 <head>
     <title>{% block title %}{% endblock %}</title>
@@ -5,35 +11,12 @@
 </head>
 {% block content %}
     <div class="content-register">
-        <div>
-            
-            <!--Créer une barre d'un haut pour le nom de la marque et le bouton du retour au site-->
-            <div class="bord_du_haut">
-                <!--Créer un bloc pour l'image et le texte'retour au site'-->
-                <div class="retour_au_site">
-                    <a href="{{url_for('home.landing_page')}}">
-                        <!--Image-->
-                        <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
-                        <!--Texte-->
-                        <h3>Retour au site</h3>  
-                    </a>  
-                </div>
-                
-                <!--Texte: Marque-->
-                <div class="marque_login">
-                    <h1>MARQUE</h1>
-                </div>
-            </div>
-        </div>
-
-
-
 
 
         <div class="elements_register">
             <!--Créer un bloc avec tous les differents champs à remplir-->
         
-            <!--s'inscrire texte-->
+            <!--Mot de passe oublie texte-->
             <div class="s_inscrire_carre">    
                 <div class="s_inscrire">
                     <h1>Mot de passe oublié</h1>

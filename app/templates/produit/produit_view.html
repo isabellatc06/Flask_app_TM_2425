@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ titre_page }}
+{% endblock %}
+
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+
+  
+  <body>
+
+    {% block content %}
+      <div class="produit_view_1">
+        <div class="produit_view_sous_classe_1">
+            <h1 class="titre_view">{{ produit.nom }}</h1>
+            <img src="{{produit.chemin_vers_le_fichier_img}}" class="img_view">
+        </div>
+
+        <div class="produit_view_sous_classe_2">
+            <p class="description_view">{{produit.description}}</p>
+            <p>Taille {{produit.taille}}</p>
+            <p>CHF {{produit.prix}}</p>
+            <div classe="buttons_view">
+                <button type="button"><img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png"></button>
+                <button type="button"><img src="https://cdn-icons-png.flaticon.com/512/13100/13100934.png"></button>
+            </div>
+        </div>
+      </div>
+    {% endblock %}
+  
+  </body>
+</html>

@@ -19,3 +19,21 @@ def produit_categorie(categorie):
     
     return render_template('produit/produit.html', produits=produits, titre=titre_page)
 
+
+@produit_bp.route('/produit/<slug>', methods=['GET'])
+def produit_view(slug):
+    db = get_db()
+    produit = db.execute(
+        "SELECT * FROM produits WHERE LOWER(nom) = ?", (slug.lower(),)
+    ).fetchone()
+
+    if produit is None:
+        return "Produit non trouvé", 404
+
+    produit_dict = dict(produit)
+    return render_template("produit/produit_view.html", produit=produit_dict)
+
+
+
+
+

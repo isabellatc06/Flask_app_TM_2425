@@ -120,12 +120,10 @@ def logout():
 @auth_bp.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
-    # Liste des routes accessibles sans connexion
-    accessible_routes = ['auth.login', 'auth.register', 'static']
-
-    if user_id is None and request.endpoint not in accessible_routes:
+    
+	
+    if user_id is None:
         g.user = None
-        return redirect(url_for('auth.login'))
     
     elif user_id is not None:
         db = get_db()
@@ -133,6 +131,11 @@ def load_logged_in_user():
             'SELECT id_users, username, role FROM users WHERE id_users = ?', (user_id,)
         ).fetchone()
         close_db()
+
+
+
+
+    
 
 
 
