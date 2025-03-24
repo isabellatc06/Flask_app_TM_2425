@@ -20,4 +20,4 @@ def index():
         
         print(f"Produits trouvés: {produits}")  # Vérifie les résultats
 
-    return render_template("search/search.html", produits=produits)
+    return render_template("produit/produit.html", produits=produits)

@@ -13,8 +13,6 @@ def produit_categorie(categorie):
     cursor.execute("SELECT * FROM produits WHERE categorie = ?", (categorie,))
     produits = cursor.fetchall()
     close_db()
-    
-    # Titre de la page dynamique
     titre_page = categorie.replace('_', ' ').capitalize()
     
     return render_template('produit/produit.html', produits=produits, titre=titre_page)
