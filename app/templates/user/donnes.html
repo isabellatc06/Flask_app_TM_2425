@@ -1,0 +1,39 @@
+{%extends 'base2.html'%}
+
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil de l'utilisateur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="profile_info">
+        <h1 class="titre_profile_info">Mon Profil</h1>
+
+        <!-- Affichage des données de l'utilisateur -->
+    
+            <p class="texte_profile_info"><strong>Nom d'utilisateur :</strong> {{ user['username'] }}</p>
+            <p class="texte_profile_info"><strong>Rue :</strong> {{ user['rue'] }}</p>
+            <p class="texte_profile_info"><strong>Numéro de rue :</strong> {{ user['no_rue'] }}</p>
+            <p class="texte_profile_info"><strong>Code postal :</strong> {{ user['code_postal'] }}</p>
+            <p class="texte_profile_info"><strong>Ville :</strong> {{ user['ville'] }}</p>
+        
+        <div class="acces_modifier">
+            <div class="options_user">
+                <a href="{{ url_for('user.show_changes') }}" class="options_user_carre">
+                    
+                    <img src="https://cdn-icons-png.flaticon.com/512/9354/9354187.png" class="img_3">
+                    <h1 class="options_texte">Modifier les données</h1>
+                    <img src="https://cdn-icons-png.flaticon.com/512/8591/8591648.png" class="img_3 img_5">
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{%endblock%}

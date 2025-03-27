@@ -1,0 +1,140 @@
+<!doctype html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header id="header2">
+        <!--Créer une barre d'un haut pour le nom de la marque et le bouton du retour au site-->
+        <div class="bord_du_haut">
+
+            <!--Créer un bloc pour l'image et le texte 'retour au site'-->
+            <div class="retour_au_site">
+                <a href="{{url_for('user.show_profile')}}">
+                    <!--Image-->
+                    <img src="https://cdn-icons-png.flaticon.com/512/10629/10629403.png" class="img1" />
+                    <!--Texte-->
+                    <h3>Retour</h3>    
+                </a>    
+            </div>
+            
+            <!--Texte: Marque-->
+            <div class="marque_login">
+                <h1>MARQUE</h1>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    <div class="container">
+    
+        <!-- Affichage des messages flash -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    
+        <div class="content-register">
+            <form method="post">
+                <!-- Créer un bloc avec tous les champs à afficher/modifier -->
+                <div class="elements_register">
+
+                    <!-- Affichage du titre "Mon Profil" -->
+                    <div class="s_inscrire_carre">    
+                        <div class="s_inscrire">
+                            <h1>Mon Profil</h1>
+                        </div>
+                    </div>
+
+                    <div class="elements_register_champs">
+                        <!-- Afficher l'adresse e-mail -->
+                        <div class="adresse_e_mail_register">
+                            <div class="carre_adresse_register">
+                                <h3>Adresse e-mail</h3>
+                            </div>
+                            <div id="username_register">
+                                <input name="username" value="{{ user['username'] }}" placeholder="Ex. : jeanlouis@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Afficher et modifier le mot de passe -->
+                        <div class="mot_de_passe_register">
+                            <div class="carre_mot_de_passe_register">
+                                <h3>Mot de passe</h3>
+                            </div>
+                            <div id="password_register">
+                                <input type="password" name="password" placeholder="8 caractères minimum">
+                            </div>
+                        </div>
+
+                        <!-- Afficher l'adresse -->
+                        <div class="adresse_norue_register">
+                            <div class="adresse_rue_register">
+                                <div class="carre_adresse_rue_register">
+                                    <h3>Rue</h3>
+                                </div>
+                                <div id="rue_register">
+                                    <input name="rue" value="{{ user['rue'] }}" placeholder="Veuillez écrire votre adresse" required>
+                                </div>
+                            </div>
+
+                            <!-- Afficher et modifier le numéro de rue -->
+                            <div class="adresse_no_register">
+                                <div class="carre_adresse_no_register">
+                                    <h3>N°</h3>
+                                </div>
+                                <div id="no_register"> 
+                                    <input name="no_rue" value="{{ user['no_rue'] }}" placeholder="N° rue" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Afficher et modifier le code postal -->
+                        <div class="code_postal_register">
+                            <div class="carre_code_postal_register">
+                                <h3>Code postal</h3>
+                            </div>
+                            <div id="code_register">
+                                <input name="code_postal" value="{{ user['code_postal'] }}" placeholder="Veuillez écrire votre code postal" required>
+                            </div>
+                        </div>
+
+                        <!-- Afficher et modifier la ville -->
+                        <div class="ville_register">
+                            <div class="carre_ville_register">
+                                <h3>Ville</h3>
+                            </div>
+                            <div id="city_register">
+                                <input name="ville" value="{{ user['ville'] }}" placeholder="Veuillez écrire votre ville" required>
+                            </div>
+                        </div>
+
+                        <!-- Bouton pour mettre à jour les informations -->
+                        <div class="s_inscrire_register">
+                            <input type="submit" value="Mettre à jour mes informations" class="inscrire_register">
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+
+            <!-- Affichage des messages de flash (si présents) -->
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+            
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+</html>
+
+
+
+

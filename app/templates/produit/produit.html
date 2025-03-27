@@ -16,7 +16,8 @@
       <div class="contenu_index">
         {% for produit in produits %}
           <!--Produit-->
-          <a href="{{ url_for('produit.produit_view', slug=produit.nom|lower|replace(' ', '-')) }}">
+          <a href="{{ url_for('produit.produit_view', id=produit['id_produits']) }}">
+
             <div class="contenu_produit">
               <!--Image du produit-->
               <div class="img_produit">

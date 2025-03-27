@@ -13,10 +13,19 @@ def admin_required(view):
     @wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None or g.user['role'] != 'admin':
+
             flash("Accès réservé aux administrateurs.", "error")
             return redirect(url_for('auth.login'))
         return view(**kwargs)
     return wrapped_view
+
+@auth_bp.route("/check_login")
+def check_login():
+    if "user" in session:
+        return redirect(url_for("user.show_profile"))  
+    else:
+        return redirect(url_for("auth.login")) 
+        
 
 # Route d'administration
 @auth_bp.route('/admin')
@@ -89,8 +98,10 @@ def login():
             error = "Mot de passe incorrect"
 
         if error is None:
-            session.clear()
+            
             session['user_id'] = user['id_users']
+            print("Utilisateur connecté, ID :", session['user_id']) 
+            
 
             # Redirige les admins vers l'espace admin
             if user['role'] == 'admin':
@@ -121,16 +132,17 @@ def logout():
 def load_logged_in_user():
     user_id = session.get('user_id')
     
-	
     if user_id is None:
         g.user = None
-    
-    elif user_id is not None:
+        print("Utilisateur non connecté")
+    else:
         db = get_db()
         g.user = db.execute(
             'SELECT id_users, username, role FROM users WHERE id_users = ?', (user_id,)
         ).fetchone()
+        
         close_db()
+
 
 
 

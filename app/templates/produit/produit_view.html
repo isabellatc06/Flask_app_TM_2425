@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{ titre_page }}
+  {{ titre }}
 {% endblock %}
 
 <!doctype html>
@@ -10,27 +10,26 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
 
-  
   <body>
 
     {% block content %}
       <div class="produit_view_1">
         <div class="produit_view_sous_classe_1">
-            <h1 class="titre_view">{{ produit.nom }}</h1>
-            <img src="{{produit.chemin_vers_le_fichier_img}}" class="img_view">
+            <h1 class="titre_view">{{ produit['nom'] }}</h1>
+            <img src="{{produit['chemin_vers_le_fichier_img']}}" class="img_view">
         </div>
 
         <div class="produit_view_sous_classe_2">
-            <p class="description_view">{{produit.description}}</p>
-            <p>Taille {{produit.taille}}</p>
-            <p>CHF {{produit.prix}}</p>
-            <div classe="buttons_view">
-                <button type="button"><img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png"></button>
-                <button type="button"><img src="https://cdn-icons-png.flaticon.com/512/13100/13100934.png"></button>
+            <p class="description_view">Description:<br>{{ produit['description'] }}</p>
+            <p class="textes_view">Taille {{ produit['taille'] }}</p>
+            <p class="textes_view">CHF {{ produit['prix'] }}</p>
+            <div class="buttons_view">
+                <button type="button" class="button_view_conteiner"><img src="https://cdn-icons-png.flaticon.com/512/9485/9485920.png" class="buttons_taille"></button>
+                <button type="button" class="button_view_conteiner"><img src="https://cdn-icons-png.flaticon.com/512/660/660465.png" class="buttons_taille"></button>
             </div>
         </div>
       </div>
     {% endblock %}
-  
+
   </body>
 </html>

@@ -20,6 +20,7 @@ from app.views.admin import admin_bp
 from app.views.barre_recherche import barre_recherche_bp
 
 
+
 # Fonction automatiquement appelée par le framework Flask lors de l'exécution de la commande python -m flask run permettant de lancer le projet
 # La fonction retourne une instance de l'application créée
 def create_app():
@@ -42,6 +43,7 @@ def create_app():
     app.register_blueprint(connect_bp)
     app.register_blueprint(admin_bp)
     app.register_blueprint(barre_recherche_bp)
+    
     
    
     # On retourne l'instance de l'application Flask
